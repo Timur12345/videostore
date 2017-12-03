@@ -1,36 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package videostore;
 
 public class Movie
 {
-	public static final int	CHILDRENS	= 2;
-	public static final int	REGULAR		= 0;
-	public static final int	NEW_RELEASE	= 1;
 	private final String	_title;
-	private int				_priceCode;
+	private final Price		_price;
 
-	public Movie(String title, int priceCode)
+	public Movie(String title, Price price)
 	{
 		_title = title;
-		_priceCode = priceCode;
-	}
-
-	public int getPriceCode()
-	{
-		return _priceCode;
-	}
-
-	public void setPriceCode(int arg)
-	{
-		_priceCode = arg;
+		_price = price;
 	}
 
 	public String getTitle()
 	{
 		return _title;
-	};
+	}
+
+	public double getRentalCost(int daysRented)
+	{
+		return _price.getRentalCost(daysRented);
+	}
+
+	public int getFrequentRenterPoints(int daysRented)
+	{
+		return _price.getFrequentRenterPoints(daysRented);
+	}
 }

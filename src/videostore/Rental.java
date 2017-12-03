@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package videostore;
 
 
@@ -25,5 +20,15 @@ public class Rental
 	public Movie getMovie()
 	{
 		return _movie;
+	}
+
+	double cost()
+	{
+		return _movie.getRentalCost(_daysRented);
+	}
+
+	int frequentRenterPoints()
+	{
+		return _movie.getFrequentRenterPoints(_daysRented);
 	}
 }
